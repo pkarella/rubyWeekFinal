@@ -1,10 +1,10 @@
 
 class Word
   @@words = []
-  attr_accessor(:name,:id,:definitions)
+  attr_accessor(:vocab,:id,:definitions)
 
-  def initialize(attribute)
-    @word = attribute[:name]
+  def initialize(attributes)
+    @vocab= attributes[:vocab]
     @id = @@words.length() + 1
     @definitions = []
   end

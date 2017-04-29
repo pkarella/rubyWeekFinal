@@ -2,8 +2,9 @@ require('sinatra')
 require('sinatra/reloader')
 require('./lib/definition')
 require('./lib/word')
-also_reload('lib/**/*.rb')
 require('pry')
+also_reload('lib/**/*.rb')
+
 
 get('/') do
   erb(:index)
@@ -20,7 +21,7 @@ end
 
 post('/view_word') do
   word = params[:word]
-  new_word = Word.new({:name=>word})
+  new_word = Word.new({:vocab=>word})
   new_word.save()
   @words = Word.all()
   erb(:view_word)
