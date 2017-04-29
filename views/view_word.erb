@@ -1,0 +1,10 @@
+
+
+
+<h5>Check out your Words </h5>
+<br>
+<br>
+<% @words.each() do |word| %>
+  <h4><a href="/word_def_page/<%= word.id() %>"><%= word.name() %></a></h4>
+<% end %>
+<button><a href="/">Home</a>></button>
